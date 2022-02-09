@@ -1,0 +1,4 @@
+<h1> Youngest director </h1>
+
+<% youngest = Director.order( { :dob => :desc }).at(0) %>
+The eldest director in our dataset right now is <%= youngest.name%>, born on <%= youngest.dob %>.

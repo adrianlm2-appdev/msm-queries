@@ -76,6 +76,8 @@ Filmography
     <td>
       <%= Director.where( {:id => Movie.where( {:id => character.movie_id} ).at(0).director_id }).at(0).name %>
     </td>
+    <td>
+      <%= character.name %>
     </td>
     <td>
       <a = href="/movies/<%= Movie.where( {:id => character.movie_id} ).at(0).id %>">

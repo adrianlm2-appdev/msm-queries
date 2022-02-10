@@ -58,5 +58,35 @@ Updated at
 <dd>
 <%= time_ago_in_words(@the_director.updated_at) %>
 </dd>
-
 </dl>
+
+<h2>
+Filmography
+<h2>
+
+<table border = "1">
+<% @filmography.each do |movie| %>
+  <tr>
+    <td>
+      <%= movie.id %>
+    </td>
+    <td>
+      <image src= <%= movie.image %>>
+    </td>
+    <td>
+      <%= movie.title %>
+    </td>
+    <td>
+      <%= movie.year %>
+    </td>
+    <td>
+      <%= Director.where( {:id => movie.director_id } ).at(0).name %>
+    </td>
+    <td>
+      <a = href="">
+      Show details </a>
+    </td>
+  </tr>
+<% end %>
+</table>
+

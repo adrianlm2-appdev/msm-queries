@@ -18,6 +18,7 @@ def director_details
 
   @id = params.fetch("id")
   @the_director = Director.where({ :id => @id }).first
+  @filmography = Movie.where({ :director_id => @the_director.id })
   render ({ :template => "director_templates/show.html.erb" })
 end
 
